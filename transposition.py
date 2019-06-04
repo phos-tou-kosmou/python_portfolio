@@ -8,7 +8,9 @@ class Matrix:
     y: Array = np.array([[1, 2, 3, 4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
 
 
-    '''TODO: I would like to munge the input so if x were a 4x4 np.ndarray and y was an array of length 16, then I would force y into an np.array.  Also an option return a flat array would be nice, depending on what the user is doing''' 
+    '''TODO: I would like to munge the input so if x were a 4x4 np.ndarray 
+    and y was an array of length 16, then I would force y into an np.array.  
+    Also an option return a flat array would be nice, depending on what the user is doing''' 
     def __init__(self, x, y)
         if(type(x) is np.ndarray and type(y) is np.ndarray):
             self.x: Array = np.array(x)
