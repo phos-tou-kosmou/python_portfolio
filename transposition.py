@@ -5,7 +5,6 @@ from multiprocessing import Pool
 x = np.array([[1, 2, 3, 4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
 y = np.array([[1, 2, 3, 4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
 
-print(x)
 
 
 def transpose(x: np.ndarray) -> np.ndarray:
@@ -44,7 +43,6 @@ def transpose_arithmetic(x: np.ndarray) -> np.ndarray:
 
         newList[len(newList)-1] = array_as_list[length*length-1]
         result: np.ndarray = newList.reshape(length, length)
-        print(result)
         return result
 
 def add_arrays(x: np.ndarray, y: np.ndarray) -> np.ndarray:
@@ -65,49 +63,53 @@ def add_arrays(x: np.ndarray, y: np.ndarray) -> np.ndarray:
         newList[i] = val + array_x_list[i]
         
     result: np.ndarray = newList.reshape(length_y, len(y))
-    print(result)
     
     return result
 
 
 
 def multiply_matrices(x: np.ndarray, y: np.ndarray) -> np.ndarray:
-    length_x: int = len(x)
-    length_y: int = len(y)
+    lx: int = len(x)
+    length_y: int = len(y)-1
 
-    newList: np.ndarray = np.arange(length_y*len(y))
+    newList: np.ndarray = np.arange(lx*lx)
 
-    array_y_list: np.ndarray = create_list(y)
-    array_x_list: np.ndarray = create_list(x)
+    array_y: np.ndarray = transpose_arithmetic(y)
+    array_x: np.ndarray = x
 
     j: int = 0    
     
     #TODO: Implement second for loop, which traverses each column using modulus arithmetic and orbit groups
 
     k: int = 0 
+    i: int = 2
+    iterator = [(p) % (lx+i) for p in newList]
+
+    print(iterator)
     
-    for i, val in enumerate(array_y_list):
-        while (k+1) != len(array_y_list):
-            newList[i] += val * array_x_list[j]
-            print(array_x_list[j])
-            j = (j+len(x)) % (len(x)*len(x))
-            k = k + 1
-        k = 0
-        j = j + 1
+'''
+    for i in range(length_x-1):
+        for p in range(length_x-1):
+            while (k+1) != length_x-1:
+
+                newList[j] += array_x[i][k] * array_y[j][k]
+
+                k = k + 1
+
+            k = 0
+            j = j + 1
          
-    result: np.ndarray = newList.reshape(length_y, len(y))
-    print(result)
+    result: np.ndarray = newList.reshape(length_y+2, len(y))
 
     return result
 
+'''
 def create_list(x: np.ndarray) -> list:
     list_of_array = [w for y in x for w in y]
     return list_of_array
 
-def main() -> np.ndarray:
-    multiply_matrices(x, y)
 
-transpose(x)
+print(multiply_matrices(x, y))
 
 
 #executor = concurrent.futures.ProcessPoolExecutor(10)
