@@ -1,0 +1,14 @@
+The algorithm below is used to determine the efficient multiplication of two matrices.  As one can see result[0] is the
+correct computation for Ax = x*y in the index A[0][0].  The same goes for result[1] as well.  I have determined
+the issue deals with lack of computation with the inner product space, which is viewed more deeply within Hessenberg deflations
+and QR algorithms.  My next decision would be to implement a while loop to iterate over each list and change from ranges to
+enumeration of one np.array made into a list.
+
+>>> result = np.array([0, 0, 0, 0])
+>>> for i in range(0, 2):
+...     for j in range(0, 2):
+...             result[i] += listx[i][j]*listy[j][i]
+... 
+>>> result
+array([19, 50,  0,  0])
+>>> 
