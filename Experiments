@@ -17,9 +17,9 @@ array([19, 50,  0,  0])
 
 #2
 06/07/2019 11:30PM
-Even though this algorithm is more "hardcoded" than I would like, it is providing feedback that will allow me to complete
-my inner product space (i.e. result[1] & result[2]).  I am now thinking that the approach of finding the eigenvalues first
-might be a better approach, the main reason being that an eigenvector can be valuable later on when computing additional
+Even though this algorithm more "hardcoded" than I would like, it is providing feedback that will allow me to complete
+my inner product space (i.e. result[1] & result[2]).  I am now thinking the approach of finding eigenvalues first
+might be a better.  The main reason being that an eigenvector can be valuable later on, when computing additional
 algorithms.  However, I really just want to see it work before optimization.
 
 >>> for i in range(0,2):
