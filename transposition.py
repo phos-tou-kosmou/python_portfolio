@@ -90,7 +90,6 @@ def multiply_matrices(x: np.ndarray, y: np.ndarray) -> np.ndarray:
             while k < lx:
 
                 newList[p] += array_x[i][k] * array_y[k][j]
-                print("X",array_x[i][k],"Y",array_y[k][j])
                 k = k + 1
 
             k = 0
