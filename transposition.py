@@ -7,7 +7,7 @@ y = np.array([[1, 2, 3, 4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
 
 
 
-def transpose(x: np.ndarray) -> np.ndarray:
+def transpose_multi(x: np.ndarray) -> np.ndarray:
     def worker(item):
         try:
             transpose_arithmetic(x)
@@ -21,19 +21,18 @@ def transpose(x: np.ndarray) -> np.ndarray:
      
     array_as_list: np.ndarray = create_list(x)
 
-    for x in enumerate(array_as_list):
-        pool.apply_async(worker, (x, ))
+    pool.apply_async(worker, (x, ))
     pool.close()
     pool.join()
     return x
 
-def transpose_arithmetic(x: np.ndarray) -> np.ndarray:
+def transpose(x: np.ndarray) -> np.ndarray:
     length: int = len(x) 
     if(length == len(x[0])): 
         
         array_as_list: np.ndarray = create_list(x)
         
-        newList: np.ndarray = np.arange(length*length)
+        newList: np.ndarray = np.zeros(length*length)
         k = 0
 
         for i, val in enumerate(array_as_list):
@@ -45,14 +44,14 @@ def transpose_arithmetic(x: np.ndarray) -> np.ndarray:
         result: np.ndarray = newList.reshape(length, length)
         return result
 
-def add_arrays(x: np.ndarray, y: np.ndarray) -> np.ndarray:
+def add_matrices(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     length_x: int = len(x)
     length_y: int = len(y)
 
     if(length_x != length_y or len(x) != len(y)):
         return "Warning: You can only add matrices with corresponding dimensions (i.e. 2x2 + 2x2, 3x2 + 3x2)"
     
-    newList: np.ndarray = np.arange(length_y*len(y))
+    newList: np.ndarray = np.zeros(length_y*len(y))
     
     array_y_list: np.ndarray = create_list(y)
     array_x_list: np.ndarray = create_list(x)
@@ -99,12 +98,24 @@ def multiply_matrices(x: np.ndarray, y: np.ndarray) -> np.ndarray:
 
     return result
 
+def determinant(x: np.ndarray) -> np.ndarray:
+    '''I have this method here merely to think about
+        I believe it would be more beneficial to think about
+        QR algorithms, householder matrices, and hessenberg deflations
+        mainly becuase determinants are not computed most of the time
+        and there are real problems that arise after getting past a
+        4x4 matrix'''    
+
+
+# The return on this method might need to be np.ndarray as well
+# hard to tell with duck type 
 def create_list(x: np.ndarray) -> list:
-    list_of_array = [w for y in x for w in y]
+    list_of_array: np.ndarray = [w for y in x for w in y]
     return list_of_array
 
+print(transpose(x))
 
-print(multiply_matrices(x, y))
+#print(multiply_matrices(transpose_arithmetic(x), y))
 
 
 #executor = concurrent.futures.ProcessPoolExecutor(10)
