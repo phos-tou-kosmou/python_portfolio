@@ -72,38 +72,34 @@ def multiply_matrices(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     lx: int = len(x)
     length_y: int = len(y)-1
 
-    newList: np.ndarray = np.arange(lx*lx)
+    newList: np.ndarray = np.zeros((lx*lx,), dtype=np.int)
 
-    array_y: np.ndarray = transpose_arithmetic(y)
+    array_y: np.ndarray = y
     array_x: np.ndarray = x
 
+  #  iterator = [(p) % (lx+i) for p in newList]
+
+  #  print(iterator)
+
     j: int = 0    
+    k: int = 0
+    p: int = 0
     
-    #TODO: Implement second for loop, which traverses each column using modulus arithmetic and orbit groups
+    for i in range(lx):
+        for j in range(lx):
+            while k < lx:
 
-    k: int = 0 
-    i: int = 2
-    iterator = [(p) % (lx+i) for p in newList]
-
-    print(iterator)
-    
-'''
-    for i in range(length_x-1):
-        for p in range(length_x-1):
-            while (k+1) != length_x-1:
-
-                newList[j] += array_x[i][k] * array_y[j][k]
-
+                newList[p] += array_x[i][k] * array_y[k][j]
+                print("X",array_x[i][k],"Y",array_y[k][j])
                 k = k + 1
 
             k = 0
-            j = j + 1
+            p = p + 1
          
-    result: np.ndarray = newList.reshape(length_y+2, len(y))
+    result: np.ndarray = newList.reshape(length_y+1, len(y))
 
     return result
 
-'''
 def create_list(x: np.ndarray) -> list:
     list_of_array = [w for y in x for w in y]
     return list_of_array
