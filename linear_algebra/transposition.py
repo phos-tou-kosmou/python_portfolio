@@ -19,7 +19,7 @@ def transpose_multi(x: np.ndarray) -> np.ndarray:
 
     pool = Pool(pool_size)
      
-    array_as_list: np.ndarray = create_list(x)
+    # array_as_list: np.ndarray = create_list(x)
 
     pool.apply_async(worker, (x, ))
     pool.close()
