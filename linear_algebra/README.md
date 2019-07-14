@@ -21,9 +21,9 @@
 Note:
     Need to include tests and implement multithreading
     
-#Notes on matrix_transposition
+# Notes on matrix_transposition
 
-###1
+### 1
 06/07/2019  4:45 PM
 The algorithm below is used to determine the efficient multiplication of two matrices.  As one can see result[0] is the
 correct computation for Ax = x*y in the index A[0][0].  The same goes for result[1] as well.  I have determined
@@ -40,7 +40,7 @@ enumeration of one np.array made into a list.
 array([19, 50,  0,  0])
 >>> 
 
-###2
+### 2
 06/07/2019 11:30PM
 Even though this algorithm more "hardcoded" than I would like, it is providing feedback that will allow me to complete
 my inner product space (i.e. result[1] & result[2]).  I am now thinking the approach of finding eigenvalues first
