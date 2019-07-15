@@ -38,7 +38,6 @@ enumeration of one np.array made into a list.
 ...  \
 >>> result \
 array([19, 50,  0,  0]) \
->>> \
 
 ### 2
 06/07/2019 11:30PM
@@ -47,15 +46,15 @@ my inner product space (i.e. result[1] & result[2]).  I am now thinking the appr
 might be a better.  The main reason being that an eigenvector can be valuable later on, when computing additional
 algorithms.  However, I really just want to see it work before optimization.
 
->>> for i in range(0,2):
-...     while p != 4:
-...             for j in range(0,2):
-...                     result[p] += listx[i][j] * listy[j][k]
-...             p = p + 1
-...             k = 1
-...     k = 0
-... 
->>> result
-array([19, 22, 0, 0])
+>>> for i in range(0,2): \
+...     while p != 4: \
+...             for j in range(0,2): \
+...                     result[p] += listx[i][j] * listy[j][k] \
+...             p = p + 1 \
+...             k = 1 \
+...     k = 0 \
+...  \
+>>> result \
+array([19, 22, 0, 0]) \
 
 The consensus is a "for in for in while" is nessecary for matrix multiplication.  The mistake I was making was that I needed an index variable for the collection array and an additional loop needed for the 3D variable.  Even though it is a 2 dimensional structure there is a dependency upon a third variable to iterate the rows for j.  View transposition.py for the implementation details.
