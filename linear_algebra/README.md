@@ -37,7 +37,7 @@ enumeration of one np.array made into a list.
 ...             result[i] += listx[i][j]*listy[j][i] \
 ...  \
 >>> result \
-array([19, 50,  0,  0]) \
+array([19, 50,  0,  0]) 
 
 ### 2
 06/07/2019 11:30PM
@@ -55,6 +55,6 @@ algorithms.  However, I really just want to see it work before optimization.
 ...     k = 0 \
 ...  \
 >>> result \
-array([19, 22, 0, 0]) \
+array([19, 22, 0, 0]) 
 
 The consensus is a "for in for in while" is nessecary for matrix multiplication.  The mistake I was making was that I needed an index variable for the collection array and an additional loop needed for the 3D variable.  Even though it is a 2 dimensional structure there is a dependency upon a third variable to iterate the rows for j.  View transposition.py for the implementation details.
