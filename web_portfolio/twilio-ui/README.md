@@ -25,4 +25,4 @@ start the flask app by: \
     `$ python3 __main__.py`
 
 
-![](vanilla.png)
+![](https://github.com/phos-tou-kosmou/python_portfolio/blob/python/web_portfolio/twilio-ui/assets/vanilla.png)
