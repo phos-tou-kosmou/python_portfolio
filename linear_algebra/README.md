@@ -1,6 +1,6 @@
 # Linear Algebra Portfolio
 
-    The main idea for this folder is to understand pythonic implementation for the underlying math for linear algebra.
+    The main idea for this is to understand pythonic implementation for the underlying math for linear algebra.
 
     Future additions:
         Hessenberg Deflations
