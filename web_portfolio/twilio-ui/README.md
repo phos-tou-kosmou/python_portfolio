@@ -11,11 +11,11 @@ include your account sid and auth token.
 Configuration for the flask portion depends upon
 a hidden.py file.  
 
-to start:
-    `$ vi hidden.py`
-    insert into the file: 
-        `hidden_account_sid = {Your Account sid}`
-        `hidden_auth_token  = {Your Auth Token}`
+to start: \
+    `$ vi hidden.py`\
+    insert into the file:\ 
+        `hidden_account_sid = {Your Account sid}`\
+        `hidden_auth_token  = {Your Auth Token}`\
 
 first start the UI:
     `$ npm start`
