@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   const [number, typeNumber] = useState([]);
-  const [note, openNote] = useState(true);
+  const [note, openNote] = useState(false);
 
   const forceUpdate = useForceUpdate();
 
@@ -67,7 +67,8 @@ function App() {
         {note && 
           <div>
             <textarea cols="15" rows="2"/>
-            <div className="btn btn-primary" >📨</div>
+            <div className="btn btn-primary phone-button" >📨</div>
+            <div className="btn btn-primary phone-button" >📝</div>
           </div>
         }
         <div id="phone-button-container">

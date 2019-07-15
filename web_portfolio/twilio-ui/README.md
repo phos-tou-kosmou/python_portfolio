@@ -24,8 +24,8 @@ to start web server: \
 ```
 
 insert into the file: \
-    `hidden_account_sid = {Your Account sid}` \
-    `hidden_auth_token  = {Your Auth Token}` 
+    `account_sid = {Your Account sid}` \
+    `auth_token  = {Your Auth Token}` 
 
 start the flask app by: \
     `$ python3 __main__.py`
@@ -38,13 +38,13 @@ start the flask app by: \
 ## Phone Calls
 ![](https://github.com/phos-tou-kosmou/python_portfolio/blob/python/web_portfolio/twilio-ui/assets/number-slot-example.png)
 
-## Send text messages over Twilio or to evernote, sticky notes, etc.
+## Send text messages over Twilio or make a Memo.
 
 ![](https://github.com/phos-tou-kosmou/python_portfolio/blob/python/web_portfolio/twilio-ui/assets/full-fledge.png)
 
 ### Future updates: 
-    1. Working to integrate within CRM's.  First target will be Zoho CRM.
+    1. Working to integrate within CRM's.  First target will be Zoho CRM.  In addition working to integrate with evernote and possibly OneNote
     
-    2. Chrome extension 
+    2. Chrome extension or wasm file. 
 
     3. Allow integration choices for Publish Subscribe servies or WSS.

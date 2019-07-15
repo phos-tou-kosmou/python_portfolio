@@ -1,7 +1,10 @@
 # Download the helper library from https://www.twilio.com/docs/python/install
 from __future__ import absolute_import, print_function
 from twilio.rest import Client
-from hidden import hidden_account_sid, hidden_auth_token
+import imp
+hidden = imp.load_source('.hidden', '.hidden.py')
+
+# from .hidden import hidden_account_sid, hidden_auth_token
 import sys
 import json
 from flask_cors import CORS
@@ -33,8 +36,8 @@ class LoggingMiddleware(object):
 # Your Account Sid and Auth Token from twilio.com/console
 # DANGER! This is insecure. See http://twil.io/secure
 def execute_text(input):
-    account_sid = hidden_account_sid
-    auth_token = hidden_auth_token
+    account_sid = hidden.account_sid
+    auth_token = hidden.auth_token
     client = Client(account_sid, auth_token)
     print(input)
     message = client.messages \
@@ -68,8 +71,7 @@ def thing():
    # context = context[1].split('"')
    # context = context[1]
     context = json.loads(request.data.decode("utf-8"))
-    print(context['listname'], file=sys.stderr)
-    print('This is standard output', file=sys.stdout)
+    print('+' + context['listname'], file=sys.stderr)
     #execute_text(context)
     return request.data
 if __name__ == '__main__':

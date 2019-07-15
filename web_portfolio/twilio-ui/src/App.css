@@ -38,9 +38,11 @@
 }
 
 #phone-background {
-  width: 200px; 
+  width: 220px; 
   height: auto; 
   background-color: gray;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 #number-display {
@@ -48,7 +50,8 @@
   margin-left: 5px;
   font-size: 30px;
   height: 40px;
-  width: 220px;
+  width: 200px;
+  background-color: white;
 }
 
 #phone-button-container {
