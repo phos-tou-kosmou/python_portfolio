@@ -10,11 +10,17 @@
 ### How to review
 
     first:
-        ```$ git clone https://github.com/phos-tou-kosmou/linear_algebra```
+        ```
+        $ git clone https://github.com/phos-tou-kosmou/linear_algebra
+        ```
 
     next: 
-       ```$ chmod +x transposition```
-       ```$ python3 ./transposition```
+       ```
+       $ chmod +x transposition
+       ```
+       ```
+       $ python3 ./transposition
+       ```
 
     There should be a default function being tested while running the script; however, it is a small library implementation so import it and test out the functions
 
@@ -34,8 +40,8 @@ enumeration of one np.array made into a list.
 ```
 result = np.array([0, 0, 0, 0]) \
 for i in range(0, 2): \
-&nbsp;&nbsp;for j in range(0, 2): \
-&nbsp;&nbsp;&nbsp;&nbsp;result[i] += listx[i][j]*listy[j][i] \
+  for j in range(0, 2): \
+    result[i] += listx[i][j]*listy[j][i] \
  
 result \
 array([19, 50,  0,  0]) \
@@ -49,12 +55,12 @@ algorithms.  However, I really just want to see it work before optimization.
 
 ```
 for i in range(0,2): \
-&nbsp;&nbsp;while p != 4: \
-&nbsp;&nbsp;&nbsp;&nbsp;for j in range(0,2): \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result[p] += listx[i][j] * listy[j][k] \
-&nbsp;&nbsp;&nbsp;&nbsp;p = p + 1 \
-&nbsp;&nbsp;&nbsp;&nbsp;k = 1 \
-&nbsp;&nbsp;k = 0 \
+  while p != 4: \
+    for j in range(0,2): \
+      result[p] += listx[i][j] * listy[j][k] \
+    p = p + 1 \
+    k = 1 \
+  k = 0 \
  \
 result \
 array([19, 22, 0, 0])
