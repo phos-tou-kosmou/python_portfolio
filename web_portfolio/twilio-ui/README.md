@@ -17,7 +17,7 @@ first start the UI: \
 
 to start web server: \
     `$ cd ../twilio_integration` \
-    `$ vi .hidden.py` \
+    `$ vi .hidden.py` 
 
 ```diff
 - ⚠️ ⚠ As you may very well know, if the name of .hidden.py is changed don't forget to include it within the .gitignore file ⚠ ⚠
