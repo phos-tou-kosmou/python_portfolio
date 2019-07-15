@@ -34,7 +34,7 @@ function App() {
     console.log(number.join(''))
     axios({
       method: 'post',
-      url: 'http://0.0.0.0:5000/api/hello',
+      url: 'http://0.0.0.0:5000/api/text',
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-type': 'application/json',
