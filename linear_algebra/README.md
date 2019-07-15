@@ -22,7 +22,8 @@
        $ python3 ./transposition
        
 
-    There should be a default function being tested while running the script; however, it is a small library implementation so import it and test out the functions
+    There should be a default function being tested while running the script;
+    however, it is a small library implementation so import it and test out the functions
 
 Note:
     Need to include tests and implement multithreading
