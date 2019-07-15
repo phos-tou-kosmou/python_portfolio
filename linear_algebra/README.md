@@ -38,13 +38,13 @@ and QR algorithms.  My next decision would be to implement a while loop to itera
 enumeration of one np.array made into a list.
 
 ```
-result = np.array([0, 0, 0, 0]) \
-for i in range(0, 2): \
-  for j in range(0, 2): \
-    result[i] += listx[i][j]*listy[j][i] \
+result = np.array([0, 0, 0, 0]) 
+for i in range(0, 2): 
+  for j in range(0, 2): 
+    result[i] += listx[i][j]*listy[j][i] 
  
-result \
-array([19, 50,  0,  0]) \
+result 
+array([19, 50,  0,  0]) 
 ```
 ### 2
 06/07/2019 11:30PM
@@ -54,15 +54,15 @@ might be a better.  The main reason being that an eigenvector can be valuable la
 algorithms.  However, I really just want to see it work before optimization.
 
 ```
-for i in range(0,2): \
-  while p != 4: \
-    for j in range(0,2): \
-      result[p] += listx[i][j] * listy[j][k] \
-    p = p + 1 \
-    k = 1 \
-  k = 0 \
- \
-result \
+for i in range(0,2): 
+  while p != 4: 
+    for j in range(0,2): 
+      result[p] += listx[i][j] * listy[j][k] 
+    p = p + 1 
+    k = 1 
+  k = 0 
+ 
+result 
 array([19, 22, 0, 0])
 ```
 
