@@ -10,17 +10,17 @@
 ### How to review
 
     first:
-        ```
+       
         $ git clone https://github.com/phos-tou-kosmou/linear_algebra
-        ```
+       
 
     next: 
-       ```
+      
        $ chmod +x transposition
-       ```
-       ```
+       
+       
        $ python3 ./transposition
-       ```
+       
 
     There should be a default function being tested while running the script; however, it is a small library implementation so import it and test out the functions
 
