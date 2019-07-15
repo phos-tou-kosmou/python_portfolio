@@ -25,4 +25,4 @@ start the flask app by:
     `$ python3 __main__.py`
 
 
-![alt text](./assets/vanilla.png)
+![Screenshot](./assets/vanilla.png)
