@@ -11,17 +11,18 @@ include your account sid and auth token.
 Configuration for the flask portion depends upon
 a hidden.py file.  
 
-to start: \
-    `$ vi hidden.py`\
-    insert into the file: \
-        `hidden_account_sid = {Your Account sid}` \
-        `hidden_auth_token  = {Your Auth Token}` 
 
 first start the UI: \
     `$ npm start`
 
+to start web server: \
+    `$ cd ../twilio_integration` \
+    `$ vi .hidden.py` \
+    insert into the file: \
+        `hidden_account_sid = {Your Account sid}` \
+        `hidden_auth_token  = {Your Auth Token}` 
+
 start the flask app by: \
-    `$ cd ../web_portfolio/twilio_integration` \
     `$ python3 __main__.py`
 
 
