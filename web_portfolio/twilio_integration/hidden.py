@@ -1,0 +1,2 @@
+hidden_account_sid = 'AC38d8de7ac05d4f909d3cc938ab01f986'
+hidden_auth_token = '0ab1f37b9b37c0f86f42e7a38901868e'
