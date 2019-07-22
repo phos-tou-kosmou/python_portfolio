@@ -35,12 +35,14 @@ def execute_text(input):
     account_sid = hidden.account_sid
     auth_token = hidden.auth_token
     client = Client(account_sid, auth_token)
+    recipient = input['listname']
+    msg = input['msg']
     print(input)
     message = client.messages \
                     .create(
-                        body="Join Earth's mightiest heroes. Like Kevin Bacon.",
+                        body=msg,
                         from_='+19198911095',
-                        to=input,
+                        to=recipient,
                     )
     return print(message.sid)
 
@@ -65,14 +67,14 @@ def index():
 def phone_call():
     context = json.loads(request.data.decode("utf-8"))
     print('+' + context['listname'], file=sys.stderr)
-    #execute_call(context)
+    execute_call('+' + context['listname'])
     return request.data
 
 @my_app.route('/api/text', methods = ['POST', 'GET'])
 def phone_text():
     context = json.loads(request.data.decode("utf-8"))
     print('+' + context['listname'], file=sys.stderr)
-    #execute_text(context)
+    execute_text(context)
     return request.data
 
 if __name__ == '__main__':

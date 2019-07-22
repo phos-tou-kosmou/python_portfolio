@@ -7,8 +7,9 @@ import './App.css';
 
 
 function App() {
-  const [number, typeNumber] = useState([]);
+  const [number, typeNumber] = useState([1]);
   const [note, openNote] = useState(false);
+  const [msg, alterMsg] = useState(null);
 
   const forceUpdate = useForceUpdate();
 
@@ -40,6 +41,28 @@ function App() {
         'Content-type': 'application/json',
       },
       data: {
+        'listname': number.join(''),
+        'msg': msg
+      }
+    })
+    .then((response) => {
+      console.log('this is the response from the python server on a post request of listname ', response);
+    })
+    .catch((error) => {
+      console.log('here is the error on a post request from the python server of listname ', error);
+    });    
+  }; 
+
+  function sendCall() {
+    console.log(number.join(''))
+    axios({
+      method: 'post',
+      url: 'http://0.0.0.0:5000/api/call',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-type': 'application/json',
+      },
+      data: {
         'listname': number.join('')
       }
     })
@@ -56,6 +79,13 @@ function App() {
     return openNote(!note);  
   }
 
+  function recordMsg(e) {
+    e.preventDefault(); e.persist();
+    
+    alterMsg(e.target.value);
+
+  }
+
   return (
     <div className="App">
       <div id="phone-background">
@@ -66,8 +96,8 @@ function App() {
         <div className="btn btn-warning phone-button" onClick={() => openMessage()}>✉️</div>
         {note && 
           <div>
-            <textarea cols="15" rows="2"/>
-            <div className="btn btn-primary phone-button" >📨</div>
+            <textarea cols="15" rows="2" onChange={recordMsg}/>
+            <div className="btn btn-primary phone-button" onClick={sendText} >📨</div>
             <div className="btn btn-primary phone-button" >📝</div>
           </div>
         }
@@ -98,7 +128,7 @@ function App() {
             </div>
           </div>
           <div>
-            <div className="btn btn-success phone-button" onClick={sendText}>
+            <div className="btn btn-success phone-button" onClick={sendCall}>
             ☎️
             </div>
             <div className="btn btn-primary phone-button" data-value="0" onClick={recordInput}>
