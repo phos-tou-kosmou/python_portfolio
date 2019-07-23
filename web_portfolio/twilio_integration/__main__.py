@@ -63,14 +63,14 @@ def execute_call(input):
 def index():
     return 'https://example.com/api/v1/docs'
 
-@my_app.route('/api/call', methods = ['POST', 'GET'])
+@my_app.route('/api/call', methods = ['POST'])
 def phone_call():
     context = json.loads(request.data.decode("utf-8"))
     print('+' + context['listname'], file=sys.stderr)
     execute_call('+' + context['listname'])
     return request.data
 
-@my_app.route('/api/text', methods = ['POST', 'GET'])
+@my_app.route('/api/text', methods = ['POST'])
 def phone_text():
     context = json.loads(request.data.decode("utf-8"))
     print('+' + context['listname'], file=sys.stderr)
