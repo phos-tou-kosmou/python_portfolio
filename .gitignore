@@ -128,4 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# idea from JetBrains
+*/.idea/workspace.xml
+*/.idea/tasks.xml
+
 # End of https://www.gitignore.io/api/python
