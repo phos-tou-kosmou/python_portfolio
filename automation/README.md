@@ -26,3 +26,19 @@ questions of Easy-Apply applications that "pop-out" into a new tab.  I believe t
 like a paid feature that not everyoen cares about.
 
 No go apply you some jobs for great good!
+
+
+### Search Term Tips
+ 
+I would go with broad terms such as ```devops```, ```software engineer```, or even keyword tech like ```Java```, ```C#```, ```Python```,
+```AWS```, etc.
+
+#### Warning for Junior Developers
+It is tempting to search for ```Junior developer``` and ```Junior``` on it's own.  I would just apply generally mainly because
+there are senior listings under junior search results, also it GREATLY reduces your job listings.  Pretty much excludes 70-80% of the
+results for the normal search terms.
+
+## WARNING OVERALL
+You are about to be putting your resume out to a lot of people and as we all know, there are scammers and recruiters overseas selling your information.  Phone Number, Email, and Github are safe but DO NOT post birthdate, personal address, or any super-specific detail like "I work at this company in North LA".  Everyone looking at this repo should know these things but there are always a couple of people needing this piece of advice.
+
+# Stay Safe And Always Proof Read Scripts Before Running Them!
