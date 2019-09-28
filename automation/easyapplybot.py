@@ -152,7 +152,7 @@ class EasyApplyBot:
         button = self.get_easy_apply_button()
         button_inner_html = str(button)
         list_of_words = button_inner_html.split()
-        time.sleep(30)
+        time.sleep(.5)
         next_word = [word for word in list_of_words if "ember" in word and "id" in word]
         ember = next_word[-1][:-1]
         xpath = '//*[@'+ember+']'
