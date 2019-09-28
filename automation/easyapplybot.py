@@ -26,7 +26,7 @@ import os
 # apply to 60-80% of the jobs under the 'position' on 
 class EasyApplyBot:
 
-    MAX_APPLICATIONS = 30
+    MAX_APPLICATIONS = 100000
 
     def __init__(self, language):
         self.language = language
