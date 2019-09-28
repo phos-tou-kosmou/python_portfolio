@@ -59,7 +59,6 @@ class EasyApplyBot:
                          "(i.e. Global, Country (United States), State (California), City (San Francisco): ") 
         self.location = "&location=" + location.replace(" ", "%20") + "&sortBy=DD"
 
-        print("\nPlease select your curriculum\n")
         time.sleep(1)
         root = Tk()
         self.resumeloctn = ''
