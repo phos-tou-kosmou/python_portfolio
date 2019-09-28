@@ -7,7 +7,23 @@ import pyautogui
 from tkinter import filedialog, Tk
 import os
 
+# extended from https://github.com/fabricio-aguiar/Easy-Apply-bot
+# Updates:
+#   - New Easy Apply card classes
+#   - try except to bypass new tab applications
+# Future Updates needed:
+#   - In order to apply to anything that has an Easy Apply button
+#   there will need to a reference file in asset containing questions from
+#   the applications.  (i.e. How many years experience do you have in X industry)
+#   - There need to be helper function made in order to deal with subforms introduced
+#   by the new tab; however, I am currently breaking since the ratio seems substantially
+#   smaller than applications that go through.
 
+# I am taking into account that you already have a LinkedIn account and that you
+# have a resume already uploaded to your profile.  The reason I do not automate
+# the login is because LinkedIn is pretty good at detecting automated input
+# which introduces the CAPTCHa requirement.  The processes should not fail and
+# apply to 60-80% of the jobs under the 'position' on 
 class EasyApplyBot:
 
     MAX_APPLICATIONS = 30
@@ -37,15 +53,16 @@ class EasyApplyBot:
         self.browser.set_window_position(2000, 2000)
         os.system("reset")
 
-        position = 'javascript'
+        position = input("What jobs would you like to apply for?")
         self.position = position.replace(" ", "%20")
-        location = "New York"
+        location = input("Where are the jobs located? " + 
+                         "(i.e. Global, Country (United States), State (California), City (San Francisco): ") 
         self.location = "&location=" + location.replace(" ", "%20") + "&sortBy=DD"
 
         print("\nPlease select your curriculum\n")
         time.sleep(1)
         root = Tk()
-        self.resumeloctn = 'C:\\Users\\kirkl\\Downloads\\kirkLincolnResume'
+        self.resumeloctn = ''
 
         root.destroy()
 
