@@ -15,18 +15,10 @@ import os
 #   - In order to apply to anything that has an Easy Apply button
 #   there will need to a reference file in asset containing questions from
 #   the applications.  (i.e. How many years experience do you have in X industry)
-#   - There need to be helper function made in order to deal with subforms introduced
-#   by the new tab; however, I am currently breaking since the ratio seems substantially
-#   smaller than applications that go through.
-
-# I am taking into account that you already have a LinkedIn account and that you
-# have a resume already uploaded to your profile.  The reason I do not automate
-# the login is because LinkedIn is pretty good at detecting automated input
-# which introduces the CAPTCHa requirement.  The processes should not fail and
-# apply to 60-80% of the jobs under the 'position' on 
+#   -
 class EasyApplyBot:
 
-    MAX_APPLICATIONS = 100000
+    MAX_APPLICATIONS = 10000
 
     def __init__(self, language):
         self.language = language
@@ -38,6 +30,7 @@ class EasyApplyBot:
     def browser_options(self):
         options = Options()
         options.add_argument("--start-maximized")
+        # options.add_argument("--headless")
         options.add_argument("--ignore-certificate-errors")
         options.add_argument("user-agent=Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393")
         return options
@@ -46,7 +39,7 @@ class EasyApplyBot:
         self.browser.get("https://linkedin.com/uas/login")
 
     def wait_for_login(self):
-        time.sleep(15)
+        time.sleep(120)
 
     def fill_data(self):
         self.browser.set_window_size(0, 0)
@@ -55,13 +48,14 @@ class EasyApplyBot:
 
         position = input("What jobs would you like to apply for?")
         self.position = position.replace(" ", "%20")
-        location = input("Where are the jobs located? " + 
-                         "(i.e. Global, Country (United States), State (California), City (San Francisco): ") 
+        location = input("Where are the jobs located? " +
+                         "(i.e. Global, Country (United States), State (California), City (San Francisco): ")
         self.location = "&location=" + location.replace(" ", "%20") + "&sortBy=DD"
 
+        print("\nPlease select your curriculum\n")
         time.sleep(1)
         root = Tk()
-        self.resumeloctn = ''
+        self.resumeloctn = 'C:\\Users\\kirkl\\Downloads\\kirkLincolnResume'
 
         root.destroy()
 
@@ -173,7 +167,9 @@ class EasyApplyBot:
                 submit_button = self.browser.find_element_by_xpath("//*[contains(text(), 'Submit application')]")
                 submit_button.click()
                 time.sleep(random.uniform(1.5, 2.5))
+
             except:
+                self.browser.switch_to.window(self.browser.window_handles[0])
                 break
 
     def load_page(self, sleep=1):
@@ -192,6 +188,7 @@ class EasyApplyBot:
 
     def avoid_lock(self):
         x, _ = pyautogui.position()
+        pyautogui.FAILSAFE = False
         pyautogui.moveTo(x+200, None, duration=1.0)
         pyautogui.moveTo(x, None, duration=0.5)
         pyautogui.keyDown('ctrl')
