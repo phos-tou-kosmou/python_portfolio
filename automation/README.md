@@ -1,7 +1,7 @@
 ## Updated Easy-Apply Linkedin Bot
 
 #### Theoretically if you were to use this on an Linkedin account then here are the theoretical procedures and warnings
-:warning: # WARNING
+# WARNING :warning:
 
 If you use this script you are at risk of violating the Linkedin's TOS agreement. 
 
