@@ -20,7 +20,7 @@ to start web server: \
     `$ vi .hidden.py` 
 
 ```diff
-⚠️ ⚠ As you may know, if the name of .hidden.py is changed don't forget to include it within the .gitignore file ⚠ ⚠
+- ⚠️ ⚠ As you may know, if the name of .hidden.py is changed don't forget to include it within the .gitignore file ⚠ ⚠
 ```
 
 insert into the file: \
