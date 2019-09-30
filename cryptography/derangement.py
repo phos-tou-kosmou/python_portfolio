@@ -6,10 +6,6 @@
 # so when we use !n to calculate !2 we find that !2 == (2-1)(!(n-1)+!(n-2))
 # well we know that n-1 == !1 which is 0 and n-2 == !0 which is 1.
 
-# Since we know the series is finite and will converge at one point (proven by the fact that
-# we are operating over a finite field F), then we may conclude that each summation is accumulating
-# to a discrete value.
-
 # !2 is defined as 1
 
 total = []
