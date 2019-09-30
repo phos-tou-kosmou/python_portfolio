@@ -1,5 +1,10 @@
 ## Updated Easy-Apply Linkedin Bot
 
+#### Theoretically if you were to use this on an Linkedin account then here are the theoretical procedures and warnings
+:warning: If you use this script you are at risk of violating the Linkedin's TOS agreement. :warning:
+:warning: You are not allowed to access the Linkedin services using automation, anything done with this script :warning:
+:warning: will your responsibility. :warning:
+
 #### Getting Started 
 
 Make sure you have python 3.7 installed onto your system using your favorite IDE.
@@ -34,7 +39,7 @@ I would go with broad terms such as ```devops```, ```software engineer```, or ev
 ```AWS```, etc.
 
 #### Warning for Junior Developers
-It is tempting to search for ```Junior developer``` and ```Junior``` on it's own.  I would just apply generally mainly because
+tempting to search for ```Junior developer``` and ```Junior``` on it's own.  I would just apply generally mainly because
 there are senior listings under junior search results, also it GREATLY reduces your job listings.  Pretty much excludes 70-80% of the
 results for the normal search terms.
 
