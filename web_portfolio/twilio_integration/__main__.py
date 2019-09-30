@@ -13,7 +13,7 @@ import imp
 hidden = imp.load_source('.hidden', '.hidden.py')
 my_app = Flask(__name__)
 cors = CORS(my_app, resources={r"/api/*": {"Origins": "*"}})
-# Change to true if you would like to troubleshoot wsgi output
+# Change to true if you would like logging enabled
 wsgiDBG = False
 class LoggingMiddleware(object):
     def __init__(self, app):
