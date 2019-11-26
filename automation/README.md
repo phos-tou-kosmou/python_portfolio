@@ -7,7 +7,7 @@
 
 #### You are not allowed to access the Linkedin services using automation, anything done with this script 
 
-#### will your responsibility. 
+#### will be your responsibility. 
 
 ### Getting Started 
 
