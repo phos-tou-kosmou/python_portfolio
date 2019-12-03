@@ -1,9 +1,10 @@
 #!/bin/python3
 import numpy as np
 from multiprocessing import Pool
+import threading
 
 x = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
-y = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
+y = np.array([[16, 15, 14, 13], [12, 11, 10, 9], [8, 7, 6, 5], [4, 3, 2, 1]])
 
 
 def transpose_multi(arr: np.ndarray) -> np.ndarray:
@@ -41,7 +42,7 @@ def transpose(tx: np.ndarray) -> np.ndarray:
 
         newList[len(newList) - 1] = array_as_list[length * length - 1]
         result: np.ndarray = newList.reshape(length, length)
-        return result
+        print(result)
 
 
 def add_matrices(amx: np.ndarray, amy: np.ndarray) -> np.ndarray:
@@ -95,22 +96,21 @@ def multiply_matrices(mmx: np.ndarray, mmy: np.ndarray) -> np.ndarray:
     return result
 
 
-def determinant(x: np.ndarray) -> np.ndarray:
-    '''I have this method here merely to think about
-        I believe it would be more beneficial to think about
-        QR algorithms, householder matrices, and hessenberg deflations
-        mainly becuase determinants are not computed most of the time
-        and there are real problems that arise after getting past a
-        4x4 matrix'''
-
-
 def create_list(oldarr: np.ndarray) -> list:
     list_of_array: list = [w for p in oldarr for w in p]
     return list_of_array
 
 
 if __name__ == '__main__':
-    print(transpose_multi(x))
+    thread1 = threading.Thread(target=transpose(x), args=(10,))
+    thread2 = threading.Thread(target=transpose(y), args=(10,))
+
+    thread1.start()
+    thread2.start()
+
+    thread1.join()
+    thread2.join()
+
 
 # print(multiply_matrices(transpose_arithmetic(x), y))
 
