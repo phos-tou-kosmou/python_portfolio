@@ -24,3 +24,6 @@
 
     There should be a default function being tested while running the script;
     however, it is a small library implementation so import it and test out the functions
+
+
+These are rigorous excercises because I enjoy Linear Algebra and am interested in memory coalescing.
